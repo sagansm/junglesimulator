@@ -17,7 +17,6 @@ public class EventManager {
             }
         }
         System.out.println("Leopard goes to heaven...");
-
     }
 
     //пробежал

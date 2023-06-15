@@ -8,6 +8,5 @@ public class _Main {
         Leopard leopard = new Leopard();
         EventManager eventManager = new EventManager();
         eventManager.startSimulation(leopard);
-
     }
 }
