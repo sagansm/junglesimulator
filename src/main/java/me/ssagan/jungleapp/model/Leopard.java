@@ -10,6 +10,12 @@ public class Leopard {
     }
 
     public void setHealth(int health){
+        if (health > 100){
+            health = 100;
+        }
+        else if (health < 0){
+            health = 0;
+        }
         this.health = health;
     }
 
@@ -18,6 +24,12 @@ public class Leopard {
     }
 
     public void setEnergy(int energy){
+        if (energy > 100){
+            energy = 100;
+        }
+        else if (energy < 0){
+            energy = 0;
+        }
         this.energy = energy;
     }
 }
