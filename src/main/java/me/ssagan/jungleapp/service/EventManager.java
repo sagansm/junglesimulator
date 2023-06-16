@@ -3,10 +3,6 @@ package me.ssagan.jungleapp.service;
 import me.ssagan.jungleapp.model.Leopard;
 
 public class EventManager {
-    //оленями, - deer
-    //лошадей - horse
-    //кабана - boar
-
 
     public void startSimulation(Leopard leopard) {
         while (isAlive(leopard)) {
@@ -44,7 +40,7 @@ public class EventManager {
     //пробежал
     private void move(Leopard leopard) {
         leopard.setEnergy(leopard.getEnergy() - 5);
-        System.out.print("leo move. ");
+        System.out.print("leo moved. ");
         correctHealth(leopard);
     }
 
@@ -63,7 +59,7 @@ public class EventManager {
         correctHealth(leopard);
     }
 
-    //зебр - zebra
+    //съел зебру - zebra
     private void eatZebra(Leopard leopard) {
         leopard.setEnergy(leopard.getEnergy() - 18);
         leopard.setHealth(leopard.getHealth() + (int) (leopard.COEFFICIENT * 6));
@@ -71,7 +67,7 @@ public class EventManager {
         correctHealth(leopard);
     }
 
-    //обезьянами,  - monkey
+    //съел обезьяну - monkey
     private void eatMonkey(Leopard leopard) {
         leopard.setEnergy(leopard.getEnergy() - 15);
         leopard.setHealth(leopard.getHealth() + (int) (leopard.COEFFICIENT * 5));
@@ -79,7 +75,7 @@ public class EventManager {
         correctHealth(leopard);
     }
 
-    //волков, - wolf
+    //съел волка - wolf
     private void eatWolf(Leopard leopard) {
         leopard.setEnergy(leopard.getEnergy() - 13);
         leopard.setHealth(leopard.getHealth() + (int) (leopard.COEFFICIENT * 4));
@@ -87,8 +83,7 @@ public class EventManager {
         correctHealth(leopard);
     }
 
-    //лисиц - fox
-    //овец - sheep
+    //съел овцу- sheep
     private void eatSheep(Leopard leopard) {
         leopard.setEnergy(leopard.getEnergy() - 10);
         leopard.setHealth(leopard.getHealth() + (int) (leopard.COEFFICIENT * 3));
@@ -96,7 +91,7 @@ public class EventManager {
         correctHealth(leopard);
     }
 
-    //зайцев - hare
+    //съел зайца - hare
     private void eatHare(Leopard leopard) {
         leopard.setEnergy(leopard.getEnergy() - 8);
         leopard.setHealth(leopard.getHealth() + (int) (leopard.COEFFICIENT * 2));
@@ -104,7 +99,7 @@ public class EventManager {
         correctHealth(leopard);
     }
 
-    //птицами, bird
+    //съел птицу, bird
     private void eatBird(Leopard leopard) {
         leopard.setEnergy(leopard.getEnergy() - 6);
         leopard.setHealth(leopard.getHealth() + (int) (leopard.COEFFICIENT * 1));
@@ -114,14 +109,14 @@ public class EventManager {
 
     private void attackedByHunter(Leopard leopard) {
         leopard.setHealth(leopard.getHealth() - 20);
-        System.out.print("leo is attacked by hunter. ");
+        System.out.print("leo was attacked by hunter. ");
         correctHealth(leopard);
     }
 
     //а жив ли Леопард?
     private boolean isAlive(Leopard leopard) {
         if (leopard.getHealth() <= 0) {
-            System.out.println("Leopard goes to heaven...");
+            System.out.println("leo has gone to heaven...");
             return false;
         } else {
             return true;
